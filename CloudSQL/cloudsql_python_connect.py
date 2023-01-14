@@ -1,6 +1,7 @@
 '''
 Installations required -
 pip install cloud-sql-python-connector["pymysql"] SQLAlchemy
+pip install google-cloud-secret-manager
 '''
 #Import required dependencies
 from google.cloud.sql.connector import Connector
