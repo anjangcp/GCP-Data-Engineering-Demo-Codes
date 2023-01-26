@@ -1,3 +1,6 @@
+/*
+Author : @ Anjan GCP Data Engineering
+*/
 #  Creating Table function
 CREATE OR REPLACE TABLE FUNCTION gcp_dataeng_demos.TableFunctionDemo(filter_timestap timestamp) AS 
   (
