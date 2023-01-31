@@ -1,0 +1,45 @@
+
+/****** Object Lifecycle Management Config JSON File  ****************/
+
+{
+    "lifecycle": {
+      "rule": [
+      {
+        "action": {
+          "type": "SetStorageClass",
+          "storageClass": "NEARLINE"
+        },
+        "condition": {
+          "age": 365,
+          "matchesStorageClass": ["STANDARD"]
+        }
+      },
+      {
+        "action": {
+          "type": "SetStorageClass",
+          "storageClass": "COLDLINE"
+        },
+        "condition": {
+          "age": 730,
+          "matchesStorageClass": ["NEARLINE"]
+        }
+      }
+    ]
+    }
+    }
+    
+ /****************** CLI Commands **********************/
+
+
+-- List Rules
+
+gcloud storage buckets describe gs://gcp-data-eng-demos --format="default(lifecycle)"
+
+-- Create Rules 
+
+gcloud storage buckets update gs://gcp-data-eng-demos \
+        --lifecycle-file=/home/gcpdataeng1982/gcs_lifecycle_config_file.json
+
+-- Clear Rules
+
+gcloud storage buckets update gs://gcp-data-eng-demos --clear-lifecycle
