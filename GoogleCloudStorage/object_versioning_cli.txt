@@ -1,0 +1,11 @@
+gcloud storage buckets update gs://version-demo --versioning
+
+gcloud storage buckets describe gs://version-demo --format="default(versioning)"
+
+gcloud storage ls --all-versions gs://version-demo
+
+gcloud storage cp gs://version-demo/lables.key#1678617129615474 gs://version-demo/lables.key
+
+gcloud storage rm gs://version-demo/lables.key#1678617129615474
+
+gcloud storage buckets update gs://version-demo --no-versioning
