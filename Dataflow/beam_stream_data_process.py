@@ -1,4 +1,19 @@
 '''
+
+Author : @ Anjan GCP Data Engineering
+
+Created this Apache Beam  code to demo Dataflow Stream ETL pipeline
+
+Steps Explaining this code;
+
+    1.  A Python APP acting as a stream data source and publishing continous data into PubSub Topic
+    2.  Read data into Apache Beam Pipeline -> into Unbounded PCollection from PubSub Topic
+    3.  Applly Unboubded data processing concepts like event timestamps, fixed windows
+    4.  Aggregate the data 
+    5.  Write aggrgated into Big Query Table
+    6.  Run this Pipeline on Dataflow Runner
+
+
 CLI command to run this pipeline on dataflow
 
 python3 -m <your script name> \ 
