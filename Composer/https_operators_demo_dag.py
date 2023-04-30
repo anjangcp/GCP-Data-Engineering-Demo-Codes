@@ -1,4 +1,12 @@
-"""Demo HTTP operators"""
+
+"""
+Author : @ Anjan GCP Data Engineering
+This Airflow DAG code to demo - Demo HTTP operators
+1. Extract data from HTTP API 
+2. Pull data from Xcom 
+3. Write data into GCS bucket in JSON format
+
+"""
 from __future__ import annotations
 
 import json
