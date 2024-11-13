@@ -1,0 +1,3 @@
+gcloud spanner instances create test-spanner-instance --config=regional-$1 --description="test-spanner-instance" --processing-units=100
+
+gcloud spanner databases create census-db --instance=test-spanner-instance --database-dialect=GOOGLE_STANDARD_SQL --ddl-file=./census-db-schema.sql
