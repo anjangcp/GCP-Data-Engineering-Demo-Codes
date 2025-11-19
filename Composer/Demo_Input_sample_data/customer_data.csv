@@ -1,0 +1,6 @@
+customer_id,name,email,join_date,data_source
+101,Alex Johnson,alex@mail.com,2025-11-15,WEB
+102,Brenda Lee,blee@mail.com,2025-11-15,MOBILE
+103,John Smith,john@mail.com,2025-11-15,WEB
+104,Chris Smith,chris@mail.com,2025-11-15,MOBILE
+105,Alen Rosy,alen@mail.com,2025-11-15,WEB
