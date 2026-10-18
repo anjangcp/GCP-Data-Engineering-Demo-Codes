@@ -1,0 +1,7 @@
+- aiInference:
+    endpoint: projects/PROJECT_ID/locations/global/publishers/google/models/gemini-3.8-flash
+    unstructuredInference: {
+      parameters: {
+        "max_tokens": 25000
+      }
+    }

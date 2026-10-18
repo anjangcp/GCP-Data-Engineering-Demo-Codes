@@ -1,0 +1,33 @@
+- javascriptUdf:
+    functionName: buildRequest
+    code: |
+      function buildRequest(message, metadata) {
+        const review = JSON.parse(message.data);
+        message.attributes['review'] = message.data;
+        message.data = JSON.stringify({
+          model: 'google/gemini-3.8-flash',
+          messages: [{
+            role: 'user',
+            content: 'Classify this customer review as exactly one of: Delivery, Product quality, Price, Customer service. Answer with the category only. Review: ' + review.review_text
+          }]
+        });
+        return message;
+      }
+- aiInference:
+    endpoint: projects/PROJECT_ID/locations/global/publishers/google/models/gemini-3.8-flash
+    unstructuredInference: {
+      parameters: {
+        "max_tokens": 1000
+      }
+    }
+- javascriptUdf:
+    functionName: keepResult
+    code: |
+      function keepResult(message, metadata) {
+        const enriched = JSON.parse(message.data);
+        const review = JSON.parse(message.attributes['review']);
+        review.topic = enriched.model_output.choices[0].message.content.trim();
+        message.data = JSON.stringify(review);
+        delete message.attributes['review'];
+        return message;
+      }

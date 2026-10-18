@@ -1,0 +1,9 @@
+# Publish these to the topic "reviews" one at a time, for example:
+#   gcloud pubsub topics publish reviews --message='{"review_id": 2, "review_text": "..."}'
+# The last line is not JSON on purpose: it fails the first transform and lands in the dead-letter topic.
+{"review_id": 2, "review_text": "The lid of the blender cracked after 9 days of normal use. Very poor quality. I would like my money back."}
+{"review_id": 5, "review_text": "The chat agent closed my conversation about the coffee machine without answering. Very frustrating."}
+{"review_id": 9, "review_text": "The electric kettle took three weeks to arrive and the tracking never updated. Not acceptable."}
+{"review_id": 14, "review_text": "The coffee machine went on sale for much less two days after I bought it. I feel overcharged."}
+{"review_id": 153, "review_text": "The coffee machine leaks a little from the side seal. It started around day 35. Not a disaster but annoying."}
+this is not JSON, just a sentence
